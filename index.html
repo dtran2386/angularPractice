@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Practicing New Features</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link type="text/css" href="css/style.css">
+    <script src="js/app.js"></script>
+</head>
+<body>
+   <div ng-controller="ctrl1">
+     <p><b>It is currently:</b> {{ theTime }}</p>
+      <div ng-repeat="x in names">
+       <p><b>Name:</b> {{ x.name }}</p>
+       <p><b>Country of origin:</b> {{ x.country }}</p>
+       <hr>
+       </div>
+   </div>
+   <div ng-controller="customersCtrl">
+      <p><strong>Locally, this file is located at:</strong> {{ myUrl }}</p>
+      <h1>{{ myHeader }}</h1>
+   </div>
+   <div ng-controller="weatherCtrl">
+       <p>It is {{ myWeather.main.temp | kelvin }} degrees right now!</p>
+   </div>
+   <div ng-controller="inputCtrl">
+        <b>Favorite Fruit:</b> <input ng-model="fruit">
+        <h2>You like: {{ fruit }}</h2>
+        <form name="myForm">
+            <b>Email: </b><input type="email" name="myAddress" ng-model="text"><span ng-show="myForm.myAddress.$error.email">Err.. your formatting seems a bit off there.</span>
+        </form>
+   </div>
+    
+</body>
+</html>
